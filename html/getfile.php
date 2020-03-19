@@ -1,6 +1,7 @@
 <?php
 
 if (!isset($_GET["id"])) {
+  http_response_code(404);
   die();
 }
 
@@ -8,8 +9,8 @@ $uuid = $_GET["id"];
 
 $mysqli = new mysqli("database_server", "webapp", "qwerty", "webapp");
 if ($mysqli->connect_errno) {
-  printf("Connect failed: %s\n", $mysqli->connect_error);
-  exit();
+  http_response_code(500);
+  die();
 }
 
 $uuid = $mysqli->real_escape_string($uuid);
@@ -24,6 +25,9 @@ if ($result = $mysqli->query("SELECT * from `uploads` WHERE `uuid`='".$uuid."'")
     header("Pragma: public");
     header("Content-Length: ".$file["size"]);
     readfile("/uploads/".$file["uuid"]);
+  } else {
+    http_response_code(404);
+    die();
   }
 }
 ?>
