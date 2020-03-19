@@ -48,7 +48,7 @@
         echo "<ul>\n";
         $cnt = 0;
         while (false !== ($entry = readdir($handle))) {
-          if ($entry != "." && $entry != "..") {
+          if (substr($entry, 0, 1) != ".") {
             echo "<li>$entry</li>\n";
             $cnt++;
           }
