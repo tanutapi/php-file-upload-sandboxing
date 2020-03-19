@@ -11,9 +11,9 @@
     </style>
   </head>
   <body>
-    <h1>File Upload</h1>
-    <h2>EGCO627 Web Application Penetration Testing</h2>
-    <h3>Sandboxing Technique by <u>Tanut Apiwong</u> & <u>Nartdanai</u></h3>
+    <h1>EGCO627 Web Application Penetration Testing</h1>
+    <h2>File Upload</h2>
+    <h3>Sandboxing Technique by <u>Tanut Apiwong</u> & <u>Nartdanai Muangniyom</u></h3>
     <p>This file was served with Apache HTTP Server from /var/www/html</p>
     <form action="upload.php" method="POST" enctype="multipart/form-data">
       <label>Any file type are accepted</label><br>
