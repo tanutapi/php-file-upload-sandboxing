@@ -19,3 +19,12 @@ services:
       MYSQL_DATABASE: webapp
       MYSQL_USER: webapp
       MYSQL_PASSWORD: qwerty
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment: 
+      PMA_HOST: database_server
+
