@@ -29,6 +29,12 @@
         printf("Connect failed: %s\n", $mysqli->connect_error);
         exit();
       }
+
+      // Create uploads table if it is not exist
+      if (!$mysqli->query("SELECT 1 FROM `uploads`")) {
+        $mysqli->query("CREATE TABLE IF NOT EXISTS `webapp`.`uploads` ( `id` INT NOT NULL AUTO_INCREMENT , `uuid` VARCHAR(64) NOT NULL , `filename` VARCHAR(128) NOT NULL , `mime` VARCHAR(64) NOT NULL , `size` INT NOT NULL , `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`), UNIQUE (`uuid`(64))) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci;");
+      }
+
       if ($result = $mysqli->query("SELECT `id`, `uuid`, `filename` FROM `uploads`")) {
         echo "<ul>\n";
         if ($result->num_rows == 0) {
