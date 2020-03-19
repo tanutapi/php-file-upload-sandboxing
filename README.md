@@ -8,3 +8,7 @@ Retrieving file back is done by the getfile.php. It will set the headers and ret
 `docker-compose up`
 Access the webapp at http://localhost, the debuging phpmyadmin are running at http://localhost:8080
 
+## Presentation ##
+Presentation is available at:
+https://docs.google.com/presentation/d/1zHPseT_ROlzQlAiKDVWIo9Hd9bDZ2hXu_4aUTVH73LY/edit?usp=sharing
+
